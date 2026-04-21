@@ -1,0 +1,13 @@
+name = "The Village 26.1"
+author = "CracklyDuck"
+version = "1.0.0"
+pack-format = "packwiz:1.1.0"
+
+[index]
+file = "index.toml"
+hash-format = "sha256"
+hash = "7b02a775efb9703bb91228699f47f663ebbfb6d005f335bb942fe486b5c135de"
+
+[versions]
+fabric = "0.19.2"
+minecraft = "26.1.2"
