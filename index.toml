@@ -54,3 +54,31 @@ metafile = true
 file = "mods/zoomify.pw.toml"
 hash = "055e6a5ca54023619cbc1d0c91d4a102d4eb37981940dc3f8de62e6a3ecb3e86"
 metafile = true
+
+[[files]]
+file = "resourcepacks/3D.zip"
+hash = "92841e1f20b5d14f9d34ffa6668418b146a5cf448d6655d8831fee54bf5e6cfe"
+
+[[files]]
+file = "resourcepacks/Basic.zip"
+hash = "7ba3faaa056a187333559e3b3211250319abca290f5b69fbebd296d6f4b9716c"
+
+[[files]]
+file = "resourcepacks/Utility.zip"
+hash = "a2d591494bdc2bf5a6c76fd7197d12419088a424344c02be6c8cb3fbf54fc8e1"
+
+[[files]]
+file = "shaderpacks/BSL_v10.1.3.zip"
+hash = "185774628b5259c36255183fc1adeb0f64f89235f7ea2c826fa327d1112687a8"
+
+[[files]]
+file = "shaderpacks/ComplementaryReimagined_r5.7.1.zip"
+hash = "24a20634a7832d422d3cd5023be16829f26840e25c69404dd418306ea79f63f0"
+
+[[files]]
+file = "shaderpacks/Visual-Vibrance-v0.3.4a.zip"
+hash = "f13ffcbaa5b9dc5183fadf1689ff1a72035ff602ee14b0605a882f9b48d3fd0c"
+
+[[files]]
+file = "the-village.bat"
+hash = "10d644b0d3d9fad006679d3bb79b27a42934c37de82b525cee374c2f3aac35a8"
