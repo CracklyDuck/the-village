@@ -56,8 +56,18 @@ hash = "0e5168a4f2934ca0aaaeab725b5b0f1dd3207e9f606eedf30c564888bd330377"
 metafile = true
 
 [[files]]
+file = "mods/litematica.pw.toml"
+hash = "6161be1f87d66a56d043f30b0f9f8b93dce01e12d7ee5493842e17e8285878d8"
+metafile = true
+
+[[files]]
 file = "mods/lithium.pw.toml"
 hash = "ceed226223967ea3e7017aad327a069250c289c834766e1a3cd27c8d0ad52de1"
+metafile = true
+
+[[files]]
+file = "mods/malilib.pw.toml"
+hash = "8a236f101781e15cb13958bc04e41887190913c0faa2a9cffb828d98c8afcb9e"
 metafile = true
 
 [[files]]
@@ -73,6 +83,16 @@ metafile = true
 [[files]]
 file = "mods/presence-footsteps.pw.toml"
 hash = "b06a45aed1a138c178d3aca3ec47f5af2d56d5c7ad03403b3530826bd95c49d3"
+metafile = true
+
+[[files]]
+file = "mods/reeses-sodium-options.pw.toml"
+hash = "5df4a212f7297545920f3e69aa8a9b2e9df8dfad2e35c5a5fb1485c5a2b0ba84"
+metafile = true
+
+[[files]]
+file = "mods/sodium-extra.pw.toml"
+hash = "546965f1ab52fc464c51e36c52305fef231837c22454d22447b8423e379502cd"
 metafile = true
 
 [[files]]
