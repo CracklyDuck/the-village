@@ -26,8 +26,23 @@ hash = "e49f549eecbe502a3da6d731d6e28783631b14b0bba7bba9780a1075e7926776"
 metafile = true
 
 [[files]]
+file = "mods/ferrite-core.pw.toml"
+hash = "069d81cab53c0141459ad4d70bcf3e10f17652f24cc62d3b4a0fc2cd2b700871"
+metafile = true
+
+[[files]]
+file = "mods/immediatelyfast.pw.toml"
+hash = "d9f54bcf75d036c25ebe636abb7ffa7c2d21c3601fec13b0fa2cc8916120affa"
+metafile = true
+
+[[files]]
 file = "mods/iris.pw.toml"
 hash = "51fa2c64e9cf2d5558a2f1e575960a0a9f9f27f73486d0d679c2bc695eb11026"
+metafile = true
+
+[[files]]
+file = "mods/krypton.pw.toml"
+hash = "d5060b22fa47d5d56e0f4617904731e9d397d1ba104320b7ec8e59f7ca0700a7"
 metafile = true
 
 [[files]]
@@ -38,6 +53,16 @@ metafile = true
 [[files]]
 file = "mods/lithium.pw.toml"
 hash = "ceed226223967ea3e7017aad327a069250c289c834766e1a3cd27c8d0ad52de1"
+metafile = true
+
+[[files]]
+file = "mods/modmenu.pw.toml"
+hash = "a3b2043845ab8f258b02e6cefe35e20f836ccc1e30acd6758fc98a772be87828"
+metafile = true
+
+[[files]]
+file = "mods/placeholder-api.pw.toml"
+hash = "d20369e5848ca31ecbb49bae22e953439173bd4617ca239b23335366b2a6a0e9"
 metafile = true
 
 [[files]]
