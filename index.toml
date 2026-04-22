@@ -103,7 +103,3 @@ hash = "24a20634a7832d422d3cd5023be16829f26840e25c69404dd418306ea79f63f0"
 [[files]]
 file = "shaderpacks/Visual-Vibrance-v0.3.4a.zip"
 hash = "f13ffcbaa5b9dc5183fadf1689ff1a72035ff602ee14b0605a882f9b48d3fd0c"
-
-[[files]]
-file = "the-village.bat"
-hash = "a4aabd77ccb58ae7e0149ebfcc1e84ecdda5ecc83629766bddeefcb22841850b"
