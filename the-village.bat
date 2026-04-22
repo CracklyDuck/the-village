@@ -62,7 +62,6 @@ java -jar packwiz-installer-bootstrap.jar %PACK_URL%
 
 echo.
 echo ===== Done! Launching Minecraft... =====
-start minecraft-launcher://
 
 pause
 endlocal
