@@ -15,25 +15,14 @@ if !errorlevel! neq 0 (
     exit /b
 )
 
-REM --- Pick which modpack to install (or pass it as an argument) ---
+REM --- Which modpack to install: defaults to latest, override with an argument ---
+REM       the-village.bat            installs latest
+REM       the-village.bat full       installs full
 set "PACK_VARIANT=%~1"
-if "!PACK_VARIANT!"=="" (
-    echo Which modpack do you want?
-    echo    [1] full     Minecraft 26.2, 31 mods, full performance stack
-    echo    [2] latest   Minecraft 26.3, 17 mods, fewer are updated so far
-    echo.
-    set /p "CHOICE=Enter 1 or 2 [default 1]: "
-    if "!CHOICE!"=="2" (set "PACK_VARIANT=latest") else (set "PACK_VARIANT=full")
-)
+if "!PACK_VARIANT!"=="" set "PACK_VARIANT=latest"
 
 set "PACK_URL=!REPO_URL!/!PACK_VARIANT!/pack.toml"
-
-REM --- Each variant gets its own game dir; full keeps the original path ---
-if /i "!PACK_VARIANT!"=="full" (
-    set "GAME_DIR=%APPDATA%\.the-village"
-) else (
-    set "GAME_DIR=%APPDATA%\.the-village-!PACK_VARIANT!"
-)
+set "GAME_DIR=%APPDATA%\.the-village"
 
 echo Installing: !PACK_VARIANT!
 echo Game folder: !GAME_DIR!
@@ -52,12 +41,8 @@ if "!MC_VERSION!"=="" (
 
 echo Detected Minecraft version: !MC_VERSION!
 
-REM --- Name the launcher profile per variant so they do not overwrite each other ---
-if /i "!PACK_VARIANT!"=="full" (
-    set "PROFILE_NAME=The Village"
-) else (
-    set "PROFILE_NAME=The Village !MC_VERSION!"
-)
+REM --- One profile per Minecraft version, all sharing the same game dir ---
+set "PROFILE_NAME=The Village !MC_VERSION!"
 
 REM --- Download Fabric installer if not present ---
 if not exist "%MC_DIR%\fabric-installer.jar" (
