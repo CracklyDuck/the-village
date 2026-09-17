@@ -76,9 +76,8 @@ cd /d "!GAME_DIR!"
 java -jar packwiz-installer-bootstrap.jar "!PACK_URL!"
 
 echo.
-echo ===== Done! Launching Minecraft... =====
-echo Pick the "!PROFILE_NAME!" profile in the launcher.
-start "" minecraft-launcher://
+echo ===== Done! =====
+echo Open the Minecraft launcher and pick the "!PROFILE_NAME!" profile.
 
 pause
 endlocal
