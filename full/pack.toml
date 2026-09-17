@@ -1,4 +1,4 @@
-name = "The Village 26.1"
+name = "The Village 26.2"
 author = "CracklyDuck"
 version = "1.26.2"
 pack-format = "packwiz:1.1.0"
@@ -6,7 +6,7 @@ pack-format = "packwiz:1.1.0"
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = "075a1fac99a6dab9f5e63d9c8afe687b869aef73d47cdde9d7c8782aa4c6f2d0"
+hash = "dfbff8c8553d172d69acde89036b5fe3f10b1413ad2c478975d5367bf8e84a49"
 
 [versions]
 fabric = "0.19.5"

@@ -1,7 +1,9 @@
 @echo off
 setlocal enabledelayedexpansion
 
-set PACK_URL=https://CracklyDuck.github.io/the-village/pack.toml
+REM --- Which modpack variant to install (folder name in the repo) ---
+set PACK_VARIANT=full
+set PACK_URL=https://CracklyDuck.github.io/the-village/%PACK_VARIANT%/pack.toml
 set MC_DIR=%APPDATA%\.minecraft
 set GAME_DIR=%APPDATA%\.the-village
 
@@ -62,6 +64,7 @@ java -jar packwiz-installer-bootstrap.jar %PACK_URL%
 
 echo.
 echo ===== Done! Launching Minecraft... =====
+start "" minecraft-launcher://
 
 pause
 endlocal

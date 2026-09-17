@@ -6,6 +6,11 @@ hash = "9bc3807d34ba58c5fab2d5ebf1d795c1212b0706dabcdda16a7a3684c8973c1e"
 metafile = true
 
 [[files]]
+file = "mods/better-block-entities.pw.toml"
+hash = "549f571b8a25fa25e39490c37eb412af36c75afc7ce21304cfed0cc8549bb2bd"
+metafile = true
+
+[[files]]
 file = "mods/better-mount-hud.pw.toml"
 hash = "6e9bddf1d0b01deb875b99fda9395b7bf927ce1a795a70b5a1bd56500e43df03"
 metafile = true
@@ -113,6 +118,11 @@ metafile = true
 [[files]]
 file = "mods/reeses-sodium-options.pw.toml"
 hash = "a4c435e9a1f73fc2bc34b144e582c2e019d0a3eec99925ddd2aaae727370ea76"
+metafile = true
+
+[[files]]
+file = "mods/resourcify.pw.toml"
+hash = "50b09b15e5b107d3cec60f0dba323bb6ec61562bcaf64fb275c398ea6b845001"
 metafile = true
 
 [[files]]
