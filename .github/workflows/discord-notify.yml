@@ -1,7 +1,17 @@
 name: Discord notify
 
-# Runs only when you start it by hand:
-# GitHub -> Actions -> "Discord notify" -> "Run workflow".
+# Two ways to send a notification, both opt-in:
+#
+# 1. Push to main with a marker in the commit subject:
+#      [notify]           required update, red embed
+#      [notify-optional]  optional update, green embed
+#    The announcement text is the commit subject with the marker removed,
+#    and the pack is worked out from which folders the push touched.
+#    Commits without a marker send nothing.
+#
+# 2. Actions -> "Discord notify" -> "Run workflow", for full control
+#    including @everyone. Push-triggered runs never ping, so a commit
+#    message can't accidentally alert the whole server.
 on:
   workflow_dispatch:
     inputs:
@@ -26,20 +36,37 @@ on:
         description: Ping @everyone
         default: false
         type: boolean
+  push:
+    branches:
+      - main
 
 jobs:
   notify:
+    # Manual runs always go. Pushes only go when the subject carries a marker.
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      contains(github.event.head_commit.message, '[notify')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-      # Inputs are passed as env vars, never interpolated into the shell,
-      # so a message containing quotes or backticks cannot break the run.
+      - name: Resolve what to announce
+        id: ctx
+        if: github.event_name == 'push'
+        env:
+          BEFORE: ${{ github.event.before }}
+          AFTER: ${{ github.event.after }}
+        run: bash .github/scripts/resolve-context.sh >> "$GITHUB_OUTPUT"
+
+      # Inputs reach the script as env vars and are never interpolated into
+      # a shell command, so quotes or backticks in a message are harmless.
       - name: Send Discord notification
         env:
           WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
-          MESSAGE: ${{ inputs.message }}
-          VARIANT: ${{ inputs.variant }}
-          REQUIRED: ${{ inputs.required_update }}
-          MENTION: ${{ inputs.mention_everyone }}
+          MESSAGE: ${{ github.event_name == 'push' && steps.ctx.outputs.message || inputs.message }}
+          VARIANT: ${{ github.event_name == 'push' && steps.ctx.outputs.variant || inputs.variant }}
+          REQUIRED: ${{ github.event_name == 'push' && steps.ctx.outputs.required || inputs.required_update }}
+          MENTION: ${{ github.event_name == 'push' && 'false' || inputs.mention_everyone }}
         run: node .github/scripts/discord-notify.js
