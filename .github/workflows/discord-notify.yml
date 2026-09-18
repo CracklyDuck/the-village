@@ -1,0 +1,45 @@
+name: Discord notify
+
+# Runs only when you start it by hand:
+# GitHub -> Actions -> "Discord notify" -> "Run workflow".
+on:
+  workflow_dispatch:
+    inputs:
+      message:
+        description: What changed, and why players should care
+        required: true
+        type: string
+      variant:
+        description: Which pack this affects
+        required: true
+        default: latest
+        type: choice
+        options:
+          - latest
+          - full
+          - both
+      required_update:
+        description: Players must update to join the server
+        default: true
+        type: boolean
+      mention_everyone:
+        description: Ping @everyone
+        default: false
+        type: boolean
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Inputs are passed as env vars, never interpolated into the shell,
+      # so a message containing quotes or backticks cannot break the run.
+      - name: Send Discord notification
+        env:
+          WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+          MESSAGE: ${{ inputs.message }}
+          VARIANT: ${{ inputs.variant }}
+          REQUIRED: ${{ inputs.required_update }}
+          MENTION: ${{ inputs.mention_everyone }}
+        run: node .github/scripts/discord-notify.js
